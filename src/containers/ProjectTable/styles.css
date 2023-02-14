@@ -1,0 +1,66 @@
+/* Table container */
+.table-container {
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 16px;
+}
+
+/* Table line */
+.table-container >.table-line {
+    border-bottom: 1px solid rgba(196, 196, 196, 0.35);
+    padding: 16px 0;
+}
+
+.table-container >.table-line:last-child {
+    border: none;
+}
+
+/* Title & Value & Action columns */
+.table-container >.table-line >.title-column >h4,
+.table-container >.table-line >.value-column >h4,
+.table-container >.table-line >.action-column h4 {
+    font-family: 'ralewaysemibold';
+    margin: 0;
+    color: #9f9fac;
+}
+
+/* Value & Action columns */
+.table-container >.table-line >.value-column, 
+.table-container >.table-line >.action-column {
+    display: flex;
+    align-items: center;
+}
+
+/* Title column */
+.table-container >.table-line >.title-column >h3,
+.table-container >.table-line >.title-column >p {
+    font-family: 'ralewayregular';
+}
+
+.table-container >.table-line >.title-column >h3 {
+    margin: 0 0 12px 0;
+}
+
+.table-container >.table-line >.title-column >p {
+    margin: 0;
+}
+
+/* Value column */
+.table-container >.table-line >.value-column {
+    justify-content: center;
+}
+
+.table-container >.table-line >.value-column >span {
+    font-family: 'ralewaysemibold';
+}
+
+
+/* Action column */
+.table-container >.table-line >.action-column {
+    justify-content: space-between;
+}
+
+.table-container >.table-line >.action-column >svg {
+    cursor: pointer;
+}

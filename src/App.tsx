@@ -1,11 +1,14 @@
 import React from 'react';
-import { Header } from './components/Header';
+import './assets/fonts/fonts.css';
+import AppTheme from './containers/AppDefaultLayout/AppTheme';
+import { Router } from './routes';
 
 function App() {
+  
   return (
-    <div>
-      <Header />
-    </div>
+    <AppTheme>
+      <Router  />
+    </AppTheme>
   );
 }
 

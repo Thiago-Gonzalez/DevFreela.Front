@@ -1,0 +1,29 @@
+.button-pattern {
+    height: 40px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0041BE;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.button-pattern >span {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'ralewaybold';
+}
+
+.button-pattern.small-button {
+    padding: 0 24px;
+}
+
+.button-pattern.large-button {
+    padding: 0 54px;
+}
