@@ -1,0 +1,11 @@
+.df-page-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.df-page-title-container >h1 {
+    font-family: 'ralewaybold';
+    margin: 0;
+}

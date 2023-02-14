@@ -1,10 +1,14 @@
 import React from 'react';
+import './assets/fonts/fonts.css';
+import AppTheme from './containers/AppDefaultLayout/AppTheme';
+import { Router } from './routes';
 
 function App() {
+  
   return (
-    <div>
-      <h1>DevFreela</h1>
-    </div>
+    <AppTheme>
+      <Router  />
+    </AppTheme>
   );
 }
 
