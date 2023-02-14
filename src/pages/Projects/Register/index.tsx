@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { ROUTE_PATHS } from "../../../commons/constants/route-paths";
-import { Button } from "../../../components/Button";
+import Button from "../../../components/Button";
 
 
 export const RegisterProject = () => {
@@ -8,10 +8,10 @@ export const RegisterProject = () => {
 
     return(
         <div>
-            <Button 
-                label="Voltar"
-                action={() => navigate(ROUTE_PATHS.projects)}
-            />
+            <Button onClick={() => navigate(ROUTE_PATHS.projects)}>
+                Voltar
+            </Button>
+
             <p>Register Project</p>
         </div>
     )

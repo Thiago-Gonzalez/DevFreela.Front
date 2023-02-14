@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button } from '../Button';
-import './styles.css';
+import Button from '../Button';
+import './styles.ts';
+import { PageTitleContainerStyled } from './styles';
+import { Typography } from '@mui/material';
 
 interface TitleProps {
     title: string,
@@ -13,14 +15,13 @@ interface TitleProps {
 export const PageTitle = ({ title, actionButton } : TitleProps) => {
 
     return(
-        <div className='df-page-title-container'>
-            <h1>{title}</h1>
+        <PageTitleContainerStyled>
+            <Typography variant="h4" fontWeight="bold">{title}</Typography>
             {actionButton && (
-                <Button
-                    label={actionButton.label}
-                    action={actionButton.action}
-                />
+                <Button onClick={actionButton.action}>
+                    {actionButton.label}
+                </Button>
             )}
-        </div>
+        </PageTitleContainerStyled>
     )
 }
