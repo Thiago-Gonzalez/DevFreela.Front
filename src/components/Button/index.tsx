@@ -1,17 +1,35 @@
-import React from 'react';
-import './styles.css';
+import { Button } from '@mui/material';
 
-interface ButtonProps {
-    size?: 'small-button' | 'large-button',
-    label: string,
-    action: () => void
+const ButtonComponent = ({ children, ...props } : any) => {
+    return <Button 
+        disableElevation={true}
+        variant="contained"
+        style={{
+            height: "40px",
+            borderRadius: "40px",
+            textTransform: "inherit",
+            fontSize: "14px",
+            fontWeight: "bold"
+        }}
+        {...props}
+    >{children}</Button>
 }
 
-export const Button = ({ size = 'small-button', label, action } : ButtonProps) => {
+export default ButtonComponent;
 
-    return(
-        <button className={`button-pattern ${size}`} onClick={action}>
-            <span>{label}</span>
-        </button>
-    )
-}
+// const ButtonPatternStyled = styled(Button)`
+//     && {
+//         height: 40px;
+//         border-radius: 40px;
+//         text-transform: inherit;
+//         font-size: 14px;
+//         font-weight: bold;
+//     }
+// `
+
+// ButtonPatternStyled.defaultProps = {
+//     disableElevation: true,
+//     variant: "contained"
+// }
+
+// export default ButtonPatternStyled;

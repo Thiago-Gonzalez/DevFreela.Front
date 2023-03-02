@@ -1,30 +1,42 @@
+import { Grid, IconButton, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as PencilIcon } from '../../assets/images/icon-pencil.svg';
 import { ReactComponent as TrashIcon } from '../../assets/images/icon-trash.svg';
-import './styles.css';
+import { ROUTE_PATHS } from '../../commons/constants/route-paths';
+import { formatCurrency } from '../../commons/utils/money';
+import { ActionColumnStyled, TableLineStyled, ValueColumnStyled } from './styles';
 
 interface TableItemProps {
-    name: string,
-    description: string,
-    value: number
+    idProject: string;
+    title: string;
+    description: string;
+    value: number;
+    onDelete: (idProject: string) => void;
 }
 
-export const TableItem = ({ name, description, value } : TableItemProps) => {
+export const TableItem = ({ idProject, title, description, value, onDelete } : TableItemProps) => {
+    const navigate = useNavigate();
 
     return(
-        <div className="row table-line">
-            <div className="col-7 title-column">
-                <h3>{name}</h3>
-                <p>{description}</p>
-            </div>
+        <TableLineStyled container>
+            <Grid item xs={7}>
+                <Typography variant="h6" fontWeight="bold">{title}</Typography>
+                <Typography variant="body1">{description}</Typography>
+            </Grid>
 
-            <div className="col-3 value-column">
-                <span>R$ {value}</span>
-            </div>
+            <ValueColumnStyled item xs={3}>
+                <Typography variant="body1" fontWeight="bold">{formatCurrency(value)}</Typography>
+            </ValueColumnStyled>
 
-            <div className="col-2 action-column">
-                <PencilIcon onClick={() => alert("Editar!")} />
-                <TrashIcon onClick={() => alert("Excluir!")} />
-            </div>
-        </div>
+            <ActionColumnStyled item xs={2}>
+                <IconButton onClick={() => navigate(`${ROUTE_PATHS.projects}/${idProject}`)}>
+                    <PencilIcon />
+                </IconButton>
+                
+                <IconButton onClick={() => onDelete(idProject)}>
+                    <TrashIcon />
+                </IconButton>
+            </ActionColumnStyled>
+        </TableLineStyled>
     )
 }
