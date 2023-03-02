@@ -18,7 +18,7 @@ export const PageTitle = ({ title, actionButton } : TitleProps) => {
         <PageTitleContainerStyled>
             <Typography variant="h4" fontWeight="bold">{title}</Typography>
             {actionButton && (
-                <Button onClick={actionButton.action}>
+                <Button data-testid="page-title-button" onClick={actionButton.action}>
                     {actionButton.label}
                 </Button>
             )}
